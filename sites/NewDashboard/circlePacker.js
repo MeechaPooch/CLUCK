@@ -98,18 +98,19 @@ function placeCircle(circle) {
 }
 
 
-// assumes unplacedCircles is EMPTY
-// and placedCircles is FILLED
 function placeCircles(circles) {
+    // reset
+    placedCircles = []
+    unplacedCircles = circles
+
+    // exit if empty
+    if(circles.length == 0) {return}
 
     // normalize
     let max = Math.max.apply(Math,circles.map(circle=>circle.r))
     circles.forEach(circle=>{circle.r/=max})
 
-    if(circles.length == 0) {return}
     circles.sort((a,b)=>(b.r-a.r));
-    placedCircles = []
-    unplacedCircles = circles
     let circle = unplacedCircles.shift()
     circle.x=0;circle.y=0;
     minY = minX = -(maxX = maxY = circle.r) // HAHA THIS IS SO COOL
