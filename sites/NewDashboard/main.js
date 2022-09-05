@@ -11,6 +11,8 @@ function regenCircles(loggedin) {
             member.img
         ))
     });
+    placedCircles = []
+    unplacedCircles = []
     placeCircles(circles)
     redrawCircles(placedCircles)
 }

@@ -14,6 +14,17 @@ function renderCircle(circle) {
     elem.style.backgroundImage = `url(${circle.imgurl})`
     // elem.innerHTML = 'hi'
     membersDiv.appendChild(elem)
+
+
+    // bubble name
+    // blue, yellow, orange, lightblue, red
+    let COLORS = ['rgba(35,132,198,.5)','rgba(255,214,0,.5)','rgba(241,93,34,.5)','rgba(108,157,204,.5)']
+
+    let name = document.createElement('name')
+    name.innerHTML = circle.name
+    name.className = 'bubblename'
+    name.style.backgroundColor = COLORS[Math.floor(Math.random() * COLORS.length)];
+    elem.appendChild(name)
 }
 
 function redrawCircles(circles) {
